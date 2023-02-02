@@ -13,7 +13,10 @@ RUN apt-get update && \
     apt-get clean
 
 # Install AWS cli:
-RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \
-    unzip awscliv2.zip && \
-    ./aws/install --bin-dir /usr/bin/ && \
-    rm -rf awscliv2.zip ./aws/
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+
+RUN unzip awscliv2.zip
+
+RUN ./aws/install --bin-dir /usr/bin/
+
+RUN  rm -rf awscliv2.zip ./aws/
