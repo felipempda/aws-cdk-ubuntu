@@ -11,3 +11,9 @@ RUN apt-get update && \
     node -v && \
     npx aws-cdk --version && \
     apt-get clean
+
+# Install AWS cli:
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \
+    unzip awscliv2.zip && \
+    ./aws/install --bin-dir /usr/bin/ && \
+    rm -rf awscliv2.zip ./aws/
